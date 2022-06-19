@@ -27,14 +27,14 @@ print(f"There are {number_of_loans} loans.")
 # Print the total value of the loans
 # YOUR CODE HERE!
 sum_of_loans = sum(loan_costs)
-print(f"The total value of the loans is: {sum_of_loans:.2f}.")
+print(f"The total value of the loans is {sum_of_loans:.2f}.")
 
 # What is the average loan amount from the list?
 # @TODO: Using the sum of all loans and the total number of loans, calculate the average loan price.
 # Print the average loan amount
 # YOUR CODE HERE!
 loan_average = sum_of_loans / number_of_loans
-print(f"The average of the loans is: {loan_average:.2f}.")
+print(f"The average of the loans is {loan_average:.2f}.")
 print("-" * 20)
 
 """Part 2: Analyze Loan Data.
@@ -121,7 +121,8 @@ new_loan = {
 #    The function should return the `present_value` for the loan.
 # YOUR CODE HERE!
 def calculate_present_value(future_value, remaining_months, annual_discount_rate):
-    return future_value / (1 + annual_discount_rate/12) ** remaining_months
+    present_value = future_value / (1 + annual_discount_rate/12) ** remaining_months
+    return present_value
 
 
 # @TODO: Use the function to calculate the present value of the new loan given below.
@@ -130,7 +131,7 @@ def calculate_present_value(future_value, remaining_months, annual_discount_rate
 annual_discount_rate = .2
 present_value = calculate_present_value(new_loan.get("future_value"), new_loan.get("remaining_months"), annual_discount_rate)
 
-print(f"The present value of the new loan, using function, is {present_value:.2f}")
+print(f"The present value of the new loan is {present_value:.2f}")
 print("-" * 20)
 
 """Part 4: Conditionally filter lists of loans.
